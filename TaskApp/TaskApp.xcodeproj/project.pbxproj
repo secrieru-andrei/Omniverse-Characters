@@ -51,7 +51,13 @@
 		7503C68729C385AE00141F92 /* TaskApp */ = {
 			isa = PBXGroup;
 			children = (
-				7503C68829C385AE00141F92 /* TaskAppApp.swift */,
+				7503C69629C3875100141F92 /* Common */,
+				7503C69729C3876000141F92 /* Views */,
+				7503C69929C3877B00141F92 /* ViewModels */,
+				7503C69B29C3879900141F92 /* Models */,
+				7503C69A29C3878800141F92 /* Navigation */,
+				7503C69829C3876C00141F92 /* Networking */,
+				7503C69C29C387B400141F92 /* Helpers */,
 				7503C68A29C385AE00141F92 /* ContentView.swift */,
 				7503C68C29C385AF00141F92 /* Assets.xcassets */,
 				7503C68E29C385AF00141F92 /* Preview Content */,
@@ -65,6 +71,56 @@
 				7503C68F29C385AF00141F92 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7503C69629C3875100141F92 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7503C68829C385AE00141F92 /* TaskAppApp.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		7503C69729C3876000141F92 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7503C69829C3876C00141F92 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		7503C69929C3877B00141F92 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7503C69A29C3878800141F92 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		7503C69B29C3879900141F92 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7503C69C29C387B400141F92 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
