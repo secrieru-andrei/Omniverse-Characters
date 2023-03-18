@@ -26,6 +26,7 @@
 		75F48FF929C5F7DB00324D13 /* AlsoFromLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F48FF829C5F7DB00324D13 /* AlsoFromLocationView.swift */; };
 		75F48FFD29C6344100324D13 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 75F48FFC29C6344100324D13 /* URLImage */; };
 		75F48FFF29C6344100324D13 /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = 75F48FFE29C6344100324D13 /* URLImageStore */; };
+		75F4900329C64E4F00324D13 /* ImageFromURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F4900229C64E4F00324D13 /* ImageFromURL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		7599813C29C5D5ED00178FB1 /* CharacterDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsView.swift; sourceTree = "<group>"; };
 		7599813F29C5D6C900178FB1 /* CharacterContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterContainerView.swift; sourceTree = "<group>"; };
 		75F48FF829C5F7DB00324D13 /* AlsoFromLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlsoFromLocationView.swift; sourceTree = "<group>"; };
+		75F4900229C64E4F00324D13 /* ImageFromURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFromURL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 			children = (
 				7503C6A929C399B300141F92 /* ViewsEnums.swift */,
 				7503C6AB29C39AB100141F92 /* NavigationProtocol.swift */,
+				75F4900229C64E4F00324D13 /* ImageFromURL.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				7503C6A629C398FB00141F92 /* CharactersListViewModel.swift in Sources */,
 				7503C6AF29C39BA600141F92 /* MainView.swift in Sources */,
 				7503C6AC29C39AB100141F92 /* NavigationProtocol.swift in Sources */,
+				75F4900329C64E4F00324D13 /* ImageFromURL.swift in Sources */,
 				7503C6B329C3BEDE00141F92 /* ApiServices.swift in Sources */,
 				7503C68929C385AE00141F92 /* TaskAppApp.swift in Sources */,
 				7503C69F29C389A200141F92 /* CharactersListView.swift in Sources */,

@@ -44,12 +44,12 @@ struct AlsoFromLocationView: View {
             }
         } label: {
             HStack {
-                URLImage(URL(string: character.image)!) { image in
+                URLImage(url: URL(string: character.image)!) { image in
                     image
                         .resizable()
                         .frame(minWidth: 100, maxWidth: 100, minHeight: 50, maxHeight: .infinity)
                         .ignoresSafeArea()
-                }
+                }.id(UUID())
                 
                 VStack(alignment: .leading,spacing: 4) {
                     Text(character.name)

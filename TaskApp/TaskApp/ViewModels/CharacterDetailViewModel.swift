@@ -16,7 +16,7 @@ final class CharacterDetailsViewModel: TopBarNavigationProtocol{
     @Published var currentCharacter: SingleCharacter!
     @Published var charactersFromLocation: [SingleCharacter] = []
     @Published var idd = 1
-
+    
     
     init(coordinator: MainCoordinator) {
         self.coordinator = coordinator

@@ -13,18 +13,21 @@ struct CharacterContainerView: View {
     
     var body: some View {
         HStack {
-            URLImage(URL(string: viewModel.currentCharacter.image)!) { image in
+            URLImage(url: URL(string: viewModel.currentCharacter.image)!) { image in
                 image
                     .resizable()
+                    .cornerRadius(20)
                     .frame(minWidth: 50, maxWidth: 150, minHeight: 50, maxHeight: .infinity)
                     .ignoresSafeArea()
-            }
+            }.id(UUID())
+            
             VStack(alignment: .leading) {
                 Text("Last known location:")
                     .font(.subheadline)
                     .foregroundColor(.orange)
                 Text(viewModel.currentCharacter.location.name)
                     .font(.caption)
+                    .foregroundColor(.black)
                 
                 Spacer()
                 
@@ -33,6 +36,7 @@ struct CharacterContainerView: View {
                     .foregroundColor(.orange)
                 Text(viewModel.getSingleCharacterFirstAppearence(charater: viewModel.currentCharacter))
                     .font(.caption)
+                    .foregroundColor(.black)
                 
                 Spacer()
                 
@@ -52,6 +56,7 @@ struct CharacterContainerView: View {
                     }
                     Text(viewModel.currentCharacter.status)
                         .font(.caption)
+                        .foregroundColor(.black)
                     
                 }
                 Spacer()
