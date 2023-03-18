@@ -9,5 +9,5 @@ import Foundation
 
 enum ViewsEnum {
     case charactersList
-    case characterDetails
+    case characterDetails(id: Int)
 }

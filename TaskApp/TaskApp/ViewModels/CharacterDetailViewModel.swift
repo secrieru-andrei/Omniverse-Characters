@@ -10,7 +10,53 @@ import Foundation
 final class CharacterDetailsViewModel: TopBarNavigationProtocol{
     internal unowned let coordinator: MainCoordinator
     
+    @Published var viewTitle = "Character Name"
+    @Published var charactersArray: [SingleCharacter] = []
+    @Published var firstSeenIn: [Int : Episode] = [:]
+    @Published var currentCharacter: SingleCharacter!
+    @Published var charactersFromLocation: [SingleCharacter] = []
+    @Published var idd = 1
+    
+    
     init(coordinator: MainCoordinator) {
         self.coordinator = coordinator
+    }
+}
+
+typealias CharacterDetailsViewModelData = CharacterDetailsViewModel
+extension CharacterDetailsViewModelData {
+    
+    func getSingleCharacterFirstAppearence(charater: SingleCharacter) -> String {
+        guard let episode = firstSeenIn[charater.id] else { return "" }
+        return episode.name
+    }
+    
+    func getCharactersFromLocation(location: String) {
+        charactersFromLocation = []
+        for character in charactersArray {
+            if character.location.name == location && character.id != currentCharacter.id {
+                charactersFromLocation.append(character)
+            }
+        }
+    }
+    
+    func switchCharacter(character: SingleCharacter) {
+        currentCharacter = character
+    }
+}
+
+typealias CharacterDetailsViewModelNavigation = CharacterDetailsViewModel
+extension CharacterDetailsViewModelNavigation {
+    
+    func navigateTo(to view: ViewsEnum) {
+        coordinator.navigatoTo(view: view)
+    }
+    
+    func backToRoot(to view: ViewsEnum) {
+        coordinator.backToRoot(viewToPush: view)
+    }
+    
+    func switchDetailsScreen(id: Int) {
+        coordinator.swithDetailsScreen(id: id)
     }
 }
