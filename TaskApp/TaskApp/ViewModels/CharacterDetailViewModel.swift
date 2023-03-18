@@ -15,6 +15,7 @@ final class CharacterDetailsViewModel: TopBarNavigationProtocol{
     @Published var firstSeenIn: [Int : Episode] = [:]
     @Published var currentCharacter: SingleCharacter!
     @Published var charactersFromLocation: [SingleCharacter] = []
+    @Published var idd = 1
 
     
     init(coordinator: MainCoordinator) {
@@ -51,7 +52,11 @@ extension CharacterDetailsViewModelNavigation {
         coordinator.navigatoTo(view: view)
     }
     
-    func pushView(to view: ViewsEnum) {
-        coordinator.pushView(viewToPush: view)
+    func backToRoot(to view: ViewsEnum) {
+        coordinator.backToRoot(viewToPush: view)
+    }
+    
+    func switchDetailsScreen(id: Int) {
+        coordinator.swithDetailsScreen(id: id)
     }
 }

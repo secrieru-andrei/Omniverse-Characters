@@ -31,7 +31,7 @@ struct CharacterDetailsView: View {
         HStack {
             Button {
                 withAnimation(.easeInOut.speed(2)) {
-                    viewModel.navigateTo(to: .charactersList)
+                    viewModel.backToRoot(to: .charactersList)
                 }
             } label: {
                 HStack {
@@ -51,6 +51,7 @@ struct CharacterDetailsView: View {
         HStack {
             Text(titleString)
                 .font(.system(.largeTitle).bold())
+                .foregroundColor(.black)
             Spacer()
         }
         .padding(.horizontal)

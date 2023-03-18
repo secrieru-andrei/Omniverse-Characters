@@ -13,7 +13,8 @@ class MainCoordinator: ObservableObject, Identifiable {
     @Published var charactersListViewModel: CharactersListViewModel!
     @Published var charactersDetailsViewModel: CharacterDetailsViewModel!
     @Published var navigationStack: [ViewsEnum] = []
-
+    @Published var detailsViewId: Int = 1
+    
     
     init() {
         charactersListViewModel = CharactersListViewModel(coordinator: self)
@@ -29,18 +30,23 @@ class MainCoordinator: ObservableObject, Identifiable {
 typealias MainCoordinatorNavigation = MainCoordinator
 extension MainCoordinatorNavigation {
     
-    func pushView(viewToPush: ViewsEnum) {
+    func backToRoot(viewToPush: ViewsEnum) {
         navigationStack.removeLast()
-        navigationStack.append(viewToPush)
         guard let newView = navigationStack.last else { return }
-                currentView = newView
+        currentView = newView
     }
     
     func navigatoTo(view: ViewsEnum) {
         navigationStack.append(view)
         guard let lastView = navigationStack.last else { return }
         currentView = lastView
-        print(navigationStack)
+    }
+    
+    func swithDetailsScreen(id: Int) {
+        navigationStack.removeLast()
+        navigationStack.append(.characterDetails(id: id))
+        guard let lastView = navigationStack.last else { return }
+        currentView = lastView
     }
 }
 

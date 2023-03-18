@@ -21,10 +21,11 @@
 		7503C6B129C3A62300141F92 /* CharactersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7503C6B029C3A62300141F92 /* CharactersModel.swift */; };
 		7503C6B329C3BEDE00141F92 /* ApiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7503C6B229C3BEDE00141F92 /* ApiServices.swift */; };
 		753802C329C3D329001C30C5 /* EpisodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753802C229C3D329001C30C5 /* EpisodeModel.swift */; };
-		7599813A29C4D90F00178FB1 /* URLImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7599813929C4D90F00178FB1 /* URLImageDownloader.swift */; };
 		7599813D29C5D5ED00178FB1 /* CharacterDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7599813C29C5D5ED00178FB1 /* CharacterDetailsView.swift */; };
 		7599814029C5D6C900178FB1 /* CharacterContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7599813F29C5D6C900178FB1 /* CharacterContainerView.swift */; };
 		75F48FF929C5F7DB00324D13 /* AlsoFromLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F48FF829C5F7DB00324D13 /* AlsoFromLocationView.swift */; };
+		75F48FFD29C6344100324D13 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 75F48FFC29C6344100324D13 /* URLImage */; };
+		75F48FFF29C6344100324D13 /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = 75F48FFE29C6344100324D13 /* URLImageStore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +44,6 @@
 		7503C6B029C3A62300141F92 /* CharactersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersModel.swift; sourceTree = "<group>"; };
 		7503C6B229C3BEDE00141F92 /* ApiServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServices.swift; sourceTree = "<group>"; };
 		753802C229C3D329001C30C5 /* EpisodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeModel.swift; sourceTree = "<group>"; };
-		7599813929C4D90F00178FB1 /* URLImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageDownloader.swift; sourceTree = "<group>"; };
 		7599813C29C5D5ED00178FB1 /* CharacterDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsView.swift; sourceTree = "<group>"; };
 		7599813F29C5D6C900178FB1 /* CharacterContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterContainerView.swift; sourceTree = "<group>"; };
 		75F48FF829C5F7DB00324D13 /* AlsoFromLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlsoFromLocationView.swift; sourceTree = "<group>"; };
@@ -54,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75F48FFF29C6344100324D13 /* URLImageStore in Frameworks */,
+				75F48FFD29C6344100324D13 /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +67,7 @@
 			children = (
 				7503C68729C385AE00141F92 /* TaskApp */,
 				7503C68629C385AE00141F92 /* Products */,
+				75F48FFA29C6339B00324D13 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,7 +160,6 @@
 			children = (
 				7503C6A929C399B300141F92 /* ViewsEnums.swift */,
 				7503C6AB29C39AB100141F92 /* NavigationProtocol.swift */,
-				7599813929C4D90F00178FB1 /* URLImageDownloader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -205,6 +207,13 @@
 			path = CharacterDetailsViewSubviews;
 			sourceTree = "<group>";
 		};
+		75F48FFA29C6339B00324D13 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -221,6 +230,10 @@
 			dependencies = (
 			);
 			name = TaskApp;
+			packageProductDependencies = (
+				75F48FFC29C6344100324D13 /* URLImage */,
+				75F48FFE29C6344100324D13 /* URLImageStore */,
+			);
 			productName = TaskApp;
 			productReference = 7503C68529C385AE00141F92 /* TaskApp.app */;
 			productType = "com.apple.product-type.application";
@@ -249,6 +262,9 @@
 				Base,
 			);
 			mainGroup = 7503C67C29C385AE00141F92;
+			packageReferences = (
+				75F48FFB29C6344100324D13 /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 7503C68629C385AE00141F92 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -278,7 +294,6 @@
 				7503C6A829C3992500141F92 /* CharacterDetailViewModel.swift in Sources */,
 				7503C6AA29C399B300141F92 /* ViewsEnums.swift in Sources */,
 				7599814029C5D6C900178FB1 /* CharacterContainerView.swift in Sources */,
-				7599813A29C4D90F00178FB1 /* URLImageDownloader.swift in Sources */,
 				7599813D29C5D5ED00178FB1 /* CharacterDetailsView.swift in Sources */,
 				7503C6A629C398FB00141F92 /* CharactersListViewModel.swift in Sources */,
 				7503C6AF29C39BA600141F92 /* MainView.swift in Sources */,
@@ -491,6 +506,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		75F48FFB29C6344100324D13 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		75F48FFC29C6344100324D13 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 75F48FFB29C6344100324D13 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+		75F48FFE29C6344100324D13 /* URLImageStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 75F48FFB29C6344100324D13 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImageStore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7503C67D29C385AE00141F92 /* Project object */;
 }

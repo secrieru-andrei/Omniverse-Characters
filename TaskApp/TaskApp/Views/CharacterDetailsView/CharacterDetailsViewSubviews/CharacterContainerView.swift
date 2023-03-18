@@ -6,19 +6,19 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct CharacterContainerView: View {
     @ObservedObject var viewModel: CharacterDetailsViewModel
     
     var body: some View {
         HStack {
-            AsyncImage(url: URL(string: viewModel.currentCharacter.image)!,
-                       placeholder: { Text("Loading ...") },
-                       image: { Image(uiImage: $0).resizable() })
-            .frame(minWidth: 100, maxWidth: 150, minHeight: 50, maxHeight: .infinity)
-            .ignoresSafeArea()
-            .cornerRadius(20)
-            
+            URLImage(URL(string: viewModel.currentCharacter.image)!) { image in
+                image
+                    .resizable()
+                    .frame(minWidth: 50, maxWidth: 150, minHeight: 50, maxHeight: .infinity)
+                    .ignoresSafeArea()
+            }
             VStack(alignment: .leading) {
                 Text("Last known location:")
                     .font(.subheadline)
@@ -33,7 +33,7 @@ struct CharacterContainerView: View {
                     .foregroundColor(.orange)
                 Text(viewModel.getSingleCharacterFirstAppearence(charater: viewModel.currentCharacter))
                     .font(.caption)
-
+                
                 Spacer()
                 
                 Text("Status:")
@@ -52,7 +52,7 @@ struct CharacterContainerView: View {
                     }
                     Text(viewModel.currentCharacter.status)
                         .font(.caption)
-
+                    
                 }
                 Spacer()
             }

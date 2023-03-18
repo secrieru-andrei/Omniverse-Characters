@@ -64,13 +64,14 @@ extension CharactersListViewModelNavigation {
         coordinator.navigatoTo(view: view)
     }
     
-    func pushView(to view: ViewsEnum) {
-        coordinator.pushView(viewToPush: view)
+    func backToRoot(to view: ViewsEnum) {
+        coordinator.backToRoot(viewToPush: view)
     }
 }
 
 typealias CharactersListViewModelSharedData = CharactersListViewModel
 extension CharactersListViewModelSharedData {
+    
     func transferData(currentCharacter: SingleCharacter) {
         coordinator.charactersDetailsViewModel.currentCharacter = currentCharacter
         coordinator.shareData(vm1: coordinator.charactersListViewModel, vm2: coordinator.charactersDetailsViewModel)

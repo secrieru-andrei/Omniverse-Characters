@@ -37,6 +37,7 @@ struct CharactersListView: View {
     func viewTitle(title: String) -> some View {
         Text(title)
             .font(.system(.largeTitle).bold())
+            .foregroundColor(.black)
     }
 }
 

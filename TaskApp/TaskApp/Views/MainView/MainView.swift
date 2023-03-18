@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @ObservedObject var coordinator: MainCoordinator
-    
+    @State var idd = 1
     init() {
         self.coordinator = MainCoordinator()
     }
@@ -23,12 +23,13 @@ struct MainView: View {
                 switch coordinator.currentView {
                 case .charactersList:
                     CharactersListView(viewModel: coordinator.charactersListViewModel)
-                        .transition(.move(edge: .leading))
-                case .characterDetails:
+                        .transition(.opacity)
+                case .characterDetails(id: let id):
                     CharacterDetailsView(viewModel: coordinator.charactersDetailsViewModel)
-                        .transition(.move(edge: .trailing))
-                case .none:
-                    EmptyView()
+                        .transition(.opacity)
+//                case .characterDetails:
+//                    CharacterDetailsView(viewModel: coordinator.charactersDetailsViewModel)
+//                        .transition(.opacity)
                 }
             }
         }
