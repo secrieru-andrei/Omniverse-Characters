@@ -3,32 +3,6 @@
 //  TaskApp
 //
 //  Created by Secrieru Andrei on 17.03.2023.
-//
-//class URLImageDonwloader: ObservableObject {
-//    @Published var image: UIImage?
-//    var urlString: String?
-//    let apiService = ApiServices()
-//
-//    init(urlString: String?) {
-//        self.urlString = urlString
-//        loadImage()
-//    }
-//
-//    func loadImage() {
-//        guard let urlString = urlString else { return }
-//        apiService.getData(stringURL: urlString, expected: Data.self) { result in
-//            switch result {
-//            case .failure(let error):
-//                print("Error: \(error)")
-//            case .success(let result):
-//                DispatchQueue.main.async {
-//                    guard let loadedImage = UIImage(data: result) else { return }
-//                    self.image = loadedImage
-//                }
-//            }
-//        }
-//    }
-//}
 
 import Foundation
 import SwiftUI

@@ -17,8 +17,12 @@ struct CharacterDetailsView: View {
                 Title(titleString: viewModel.currentCharacter.name)
                 CharacterContainerView(viewModel: viewModel)
                     .padding(.horizontal)
+                AlsoFromLocationView(viewModel: viewModel)
+                    .onAppear {
+                        viewModel.getCharactersFromLocation(location: viewModel.currentCharacter.location.name)
+                    }
                 Spacer()
-            }
+            }.edgesIgnoringSafeArea(.bottom)
         }
     }
     
@@ -26,7 +30,9 @@ struct CharacterDetailsView: View {
     func BackButton() -> some View {
         HStack {
             Button {
-                viewModel.navigateTo(to: .charactersList)
+                withAnimation(.easeInOut.speed(2)) {
+                    viewModel.navigateTo(to: .charactersList)
+                }
             } label: {
                 HStack {
                     Image(systemName: "arrow.backward")

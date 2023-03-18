@@ -23,8 +23,12 @@ struct MainView: View {
                 switch coordinator.currentView {
                 case .charactersList:
                     CharactersListView(viewModel: coordinator.charactersListViewModel)
+                        .transition(.move(edge: .leading))
                 case .characterDetails:
                     CharacterDetailsView(viewModel: coordinator.charactersDetailsViewModel)
+                        .transition(.move(edge: .trailing))
+                case .none:
+                    EmptyView()
                 }
             }
         }

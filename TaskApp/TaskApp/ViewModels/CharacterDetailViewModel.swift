@@ -14,6 +14,7 @@ final class CharacterDetailsViewModel: TopBarNavigationProtocol{
     @Published var charactersArray: [SingleCharacter] = []
     @Published var firstSeenIn: [Int : Episode] = [:]
     @Published var currentCharacter: SingleCharacter!
+    @Published var charactersFromLocation: [SingleCharacter] = []
 
     
     init(coordinator: MainCoordinator) {
@@ -27,6 +28,19 @@ extension CharacterDetailsViewModelData {
     func getSingleCharacterFirstAppearence(charater: SingleCharacter) -> String {
         guard let episode = firstSeenIn[charater.id] else { return "" }
         return episode.name
+    }
+    
+    func getCharactersFromLocation(location: String) {
+        charactersFromLocation = []
+        for character in charactersArray {
+            if character.location.name == location && character.id != currentCharacter.id {
+                charactersFromLocation.append(character)
+            }
+        }
+    }
+    
+    func switchCharacter(character: SingleCharacter) {
+        currentCharacter = character
     }
 }
 

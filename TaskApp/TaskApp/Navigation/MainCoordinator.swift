@@ -32,8 +32,8 @@ extension MainCoordinatorNavigation {
     func pushView(viewToPush: ViewsEnum) {
         navigationStack.removeLast()
         navigationStack.append(viewToPush)
-        guard let lastView = navigationStack.last else { return }
-        currentView = lastView
+        guard let newView = navigationStack.last else { return }
+                currentView = newView
     }
     
     func navigatoTo(view: ViewsEnum) {

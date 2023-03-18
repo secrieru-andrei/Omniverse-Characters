@@ -1,23 +1,43 @@
 //
-//  CharacterSection.swift
+//  AlsoFromLocationView.swift
 //  TaskApp
 //
-//  Created by Secrieru Andrei on 16.03.2023.
+//  Created by Secrieru Andrei on 18.03.2023.
 //
 
 import SwiftUI
 
-struct CharacterSection: View {
+struct AlsoFromLocationView: View {
     
-    @ObservedObject var viewModel: CharactersListViewModel
+    @ObservedObject var viewModel: CharacterDetailsViewModel
     
-    let character: SingleCharacter!
     
     var body: some View {
+        VStack(alignment: .leading) {
+            Text("Also from: \(viewModel.currentCharacter.location.name)")
+                .font(.headline.bold())
+                .padding(.horizontal)
+            
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(spacing: 16) {
+                    ForEach(viewModel.charactersFromLocation, id: \.id) { character in
+                        CustomButton(character: character)
+                    }
+                }
+                .padding(.horizontal, 16)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .ignoresSafeArea()
+            }
+        }
+    }
+    
+    @ViewBuilder
+    func CustomButton(character: SingleCharacter) -> some View {
         Button {
             withAnimation(.easeInOut.speed(2)) {
-                viewModel.transferData(currentCharacter: character)
-                viewModel.navigateTo(to: .characterDetails)
+                viewModel.switchCharacter(character: character)
+                viewModel.getCharactersFromLocation(location: character.location.name)
+                viewModel.pushView(to: .characterDetails)
             }
         } label: {
             HStack {
@@ -52,5 +72,11 @@ struct CharacterSection: View {
                     .clipped()
                     .shadow(color: .black.opacity(0.3), radius: 10, x: 5, y: 10)
         }
+    }
+}
+
+struct AlsoFromLocationView_Previews: PreviewProvider {
+    static var previews: some View {
+        AlsoFromLocationView(viewModel: CharacterDetailsViewModel(coordinator: MainCoordinator()))
     }
 }

@@ -24,6 +24,7 @@
 		7599813A29C4D90F00178FB1 /* URLImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7599813929C4D90F00178FB1 /* URLImageDownloader.swift */; };
 		7599813D29C5D5ED00178FB1 /* CharacterDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7599813C29C5D5ED00178FB1 /* CharacterDetailsView.swift */; };
 		7599814029C5D6C900178FB1 /* CharacterContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7599813F29C5D6C900178FB1 /* CharacterContainerView.swift */; };
+		75F48FF929C5F7DB00324D13 /* AlsoFromLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F48FF829C5F7DB00324D13 /* AlsoFromLocationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		7599813929C4D90F00178FB1 /* URLImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageDownloader.swift; sourceTree = "<group>"; };
 		7599813C29C5D5ED00178FB1 /* CharacterDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsView.swift; sourceTree = "<group>"; };
 		7599813F29C5D6C900178FB1 /* CharacterContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterContainerView.swift; sourceTree = "<group>"; };
+		75F48FF829C5F7DB00324D13 /* AlsoFromLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlsoFromLocationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				7599813F29C5D6C900178FB1 /* CharacterContainerView.swift */,
+				75F48FF829C5F7DB00324D13 /* AlsoFromLocationView.swift */,
 			);
 			path = CharacterDetailsViewSubviews;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				7503C68929C385AE00141F92 /* TaskAppApp.swift in Sources */,
 				7503C69F29C389A200141F92 /* CharactersListView.swift in Sources */,
 				7503C6A429C398BC00141F92 /* MainCoordinator.swift in Sources */,
+				75F48FF929C5F7DB00324D13 /* AlsoFromLocationView.swift in Sources */,
 				753802C329C3D329001C30C5 /* EpisodeModel.swift in Sources */,
 				7503C6B129C3A62300141F92 /* CharactersModel.swift in Sources */,
 				7503C6A229C38A2A00141F92 /* CharacterSection.swift in Sources */,
