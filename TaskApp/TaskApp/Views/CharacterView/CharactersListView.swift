@@ -21,7 +21,6 @@ struct CharactersListView: View {
                     VStack(spacing: 16) {
                         ForEach(viewModel.charactersArray, id: \.id) { character in
                             CharacterSection(viewModel: viewModel,
-                                             
                                              character: character)
                         }
                     }

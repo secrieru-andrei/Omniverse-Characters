@@ -14,8 +14,7 @@ final class CharactersListViewModel: TopBarNavigationProtocol{
     @Published var charactersArray: [SingleCharacter] = []
     private let stringURL = "https://rickandmortyapi.com/api/character"
     private let apiServices = ApiServices()
-    @Published var firstSeenIn: [Int : String] = [:]
-    var name: String = ""
+    @Published var firstSeenIn: [Int : Episode] = [:]
     
     init(coordinator: MainCoordinator) {
         self.coordinator = coordinator
@@ -46,7 +45,7 @@ extension CharactersListViewModelData {
                 case .failure(let error):
                     print("Error: \(error)")
                 case.success(let result):
-                    self?.firstSeenIn[character.id] = result.name
+                    self?.firstSeenIn[character.id] = result
                 }
             }
         }
@@ -54,6 +53,26 @@ extension CharactersListViewModelData {
     
     func getSingleCharacterFirstAppearence(charater: SingleCharacter) -> String {
         guard let episode = firstSeenIn[charater.id] else { return "" }
-        return episode
+        return episode.name
+    }
+}
+
+typealias CharactersListViewModelNavigation = CharactersListViewModel
+extension CharactersListViewModelNavigation {
+    
+    func navigateTo(to view: ViewsEnum) {
+        coordinator.navigatoTo(view: view)
+    }
+    
+    func pushView(to view: ViewsEnum) {
+        coordinator.pushView(viewToPush: view)
+    }
+}
+
+typealias CharactersListViewModelSharedData = CharactersListViewModel
+extension CharactersListViewModelSharedData {
+    func transferData(currentCharacter: SingleCharacter) {
+        coordinator.charactersDetailsViewModel.currentCharacter = currentCharacter
+        coordinator.shareData(vm1: coordinator.charactersListViewModel, vm2: coordinator.charactersDetailsViewModel)
     }
 }

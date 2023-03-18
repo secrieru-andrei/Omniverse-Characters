@@ -25,3 +25,29 @@ class MainCoordinator: ObservableObject, Identifiable {
         navigationStack.append(currentView)
     }
 }
+
+typealias MainCoordinatorNavigation = MainCoordinator
+extension MainCoordinatorNavigation {
+    
+    func pushView(viewToPush: ViewsEnum) {
+        navigationStack.removeLast()
+        navigationStack.append(viewToPush)
+        guard let lastView = navigationStack.last else { return }
+        currentView = lastView
+    }
+    
+    func navigatoTo(view: ViewsEnum) {
+        navigationStack.append(view)
+        guard let lastView = navigationStack.last else { return }
+        currentView = lastView
+        print(navigationStack)
+    }
+}
+
+typealias MainCoordinatorSharedData = MainCoordinator
+extension MainCoordinatorSharedData {
+    func shareData(vm1: CharactersListViewModel, vm2: CharacterDetailsViewModel) {
+        vm2.charactersArray = vm1.charactersArray
+        vm2.firstSeenIn = vm1.firstSeenIn
+    }
+}

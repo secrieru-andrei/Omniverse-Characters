@@ -24,7 +24,7 @@ struct MainView: View {
                 case .charactersList:
                     CharactersListView(viewModel: coordinator.charactersListViewModel)
                 case .characterDetails:
-                    Text("")
+                    CharacterDetailsView(viewModel: coordinator.charactersDetailsViewModel)
                 }
             }
         }
