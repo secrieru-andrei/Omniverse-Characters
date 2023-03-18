@@ -27,21 +27,21 @@ final class CharactersListViewModel: TopBarNavigationProtocol{
 typealias CharactersListViewModelData = CharactersListViewModel
 extension CharactersListViewModelData {
     func getCharactersData() {
-        apiServices.getCharacters(stringURL: stringURL, expected: CharactersData.self) { [weak self] (result) in
+        apiServices.getData(stringURL: stringURL, expected: CharactersData.self) { [weak self] (result) in
             switch result {
             case .failure(let error):
                 print("Error: \(error)")
             case.success(let result):
                 self?.charactersArray = result.characters
                 self?.getAllCharacterFirstAppearence()
-
+                
             }
         }
     }
     
     func getAllCharacterFirstAppearence() {
         for character in charactersArray {
-            apiServices.getCharacters(stringURL: character.episode[0], expected: Episode.self) { [weak self] (result) in
+            apiServices.getData(stringURL: character.episode[0], expected: Episode.self) { [weak self] (result) in
                 switch result {
                 case .failure(let error):
                     print("Error: \(error)")
@@ -54,7 +54,6 @@ extension CharactersListViewModelData {
     
     func getSingleCharacterFirstAppearence(charater: SingleCharacter) -> String {
         guard let episode = firstSeenIn[charater.id] else { return "" }
-        print(episode)
         return episode
     }
 }

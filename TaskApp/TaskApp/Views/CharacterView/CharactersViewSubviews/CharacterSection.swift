@@ -10,35 +10,34 @@ import SwiftUI
 struct CharacterSection: View {
     
     @ObservedObject var viewModel: CharactersListViewModel
+    
     let character: SingleCharacter!
     
     var body: some View {
         HStack {
-            Image(systemName: "person")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(minWidth: 50, maxWidth: 100, minHeight: 50, maxHeight: 100)
-
-            VStack(alignment: .leading) {
-                Text(character.name)
-                    .font(.custom("Verdana-Bold", size: 18))
-                    .foregroundColor(.orange)
+            
+            AsyncImage(url: URL(string: character.image)!,
+                       placeholder: { Text("Loading ...") },
+                       image: { Image(uiImage: $0).resizable() })
+            .frame(minWidth: 100, maxWidth: 100, minHeight: 50, maxHeight: .infinity)
+            .ignoresSafeArea()
+            
+            VStack(alignment: .leading,spacing: 4) {
+                    Text(character.name)
+                        .font(.system(.title3).bold())
+                        .foregroundColor(.orange)
                 Text(character.location.name)
-                    .font(.custom("Verdana", size: 14))
-                    .padding(.vertical, 1)
+                    .font(.system(.subheadline))
                 Text("Episode:")
-                    .font(.custom("Verdana", size: 14))
-                    .onAppear {
-                        
-                    }
+                    .font(.system(.subheadline))
                 Text(viewModel.getSingleCharacterFirstAppearence(charater: character))
-                    .font(.custom("Verdana", size: 12))
+                    .font(.system(.caption))
                     .lineLimit(1)
             }
+            .padding(.vertical)
             Spacer()
         }
-        .frame(maxWidth: .infinity)
-        .padding()
+        .frame(maxWidth: .infinity, maxHeight: 110)
         .background(.white)
         .cornerRadius(20)
         .clipped()

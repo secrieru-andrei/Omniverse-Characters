@@ -20,7 +20,9 @@ struct CharactersListView: View {
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing: 16) {
                         ForEach(viewModel.charactersArray, id: \.id) { character in
-                           CharacterSection(viewModel: viewModel, character: character)
+                            CharacterSection(viewModel: viewModel,
+                                             
+                                             character: character)
                         }
                     }
                     .padding(.top, 16)
@@ -29,14 +31,13 @@ struct CharactersListView: View {
                     .ignoresSafeArea()
                 }
             }
-            
         }
     }
     
     @ViewBuilder
     func viewTitle(title: String) -> some View {
         Text(title)
-            .font(.custom("Verdana-Bold", size: 32))
+            .font(.system(.largeTitle).bold())
     }
 }
 

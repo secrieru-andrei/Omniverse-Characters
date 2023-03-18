@@ -11,12 +11,9 @@ import Foundation
 class ApiServices {
     
     private var dataTask: URLSessionDataTask?
-
-//    typealias CompletionHandler = (Swift.Result<T.Type, Error>)  -> Void
-
-    func getCharacters<T: Codable>(stringURL: String, expected: T.Type, completion: @escaping (Swift.Result<T, Error>) -> Void) {
+    
+    func getData<T: Codable>(stringURL: String, expected: T.Type, completion: @escaping (Swift.Result<T, Error>) -> Void) {
         guard let url = URL(string: stringURL) else { return }
-        
         dataTask = URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
             if let error = error {
                 completion(.failure(error))
