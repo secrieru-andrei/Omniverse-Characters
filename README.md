@@ -1,4 +1,4 @@
-# TaskApp
+# Omniverse-Characters
 
 App that displaying characters from Rick and Morty series. Two views, first with a list with characters and the second view displays some details about character and charachers from the same location!
 Back button returns to character's list even if another character was selected from characters details view! It was done using coordinator pattern. As project architecture was selected MVVM.
